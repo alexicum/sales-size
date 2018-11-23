@@ -1,0 +1,34 @@
+{
+  "name": "sales-size",
+  "version": "1.0.0",
+  "description": "create-react-app + Node API on Heroku",
+  "engines": {
+    "node": "10.11.x"
+  },
+  "scripts": {
+    "start": "node --experimental-modules server/index.mjs",
+    "heroku-postbuild": "cd react-ui/ && npm install && npm install --only=dev --no-shrinkwrap && npm run build"
+  },
+  "cacheDirectories": [
+    "node_modules",
+    "react-ui/node_modules"
+  ],
+  "dependencies": {
+    "express": "^4.16.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "github:alexicum/sales-size"
+  },
+  "keywords": [
+    "node",
+    "heroku",
+    "create-react-app",
+    "react",
+    "redux",
+    "rematch",
+    "recompose"
+  ],
+  "license": "MIT",
+  "devDependencies": {}
+}
