@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Record = ({ id, dateTime, rate, value, delta }) => {
+const Record = ({ _id, dateTime, rate, value, delta }) => {
   return (
     <li>
-      <span>Id:</span> {id}
+      <span>Id:</span> {_id}
       <span>DateTime:</span> {dateTime}
       <span>Rate:</span> {rate}
       <span>Value:</span> {value}

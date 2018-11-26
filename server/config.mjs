@@ -2,10 +2,14 @@ const DEBUG = !(process.env.NODE_ENV === 'production');
 
 const PORT = process.env.PORT || 5000;
 
-const REACT_UI_PATH = '../react-ui/build/';
+const UI_BUILD_PATH = process.env.UI_BUILD_PATH || '../react-ui/build/';
 
 export default {
   DEBUG,
   PORT,
-  REACT_UI_PATH,
+  UI_BUILD_PATH,
+
+  DB_USER: process.env.DB_USER,
+  DB_PASS: process.env.DB_PASS,
+  DB_SERVER: process.env.DB_SERVER,
 };

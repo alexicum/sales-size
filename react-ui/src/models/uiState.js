@@ -1,6 +1,6 @@
 export default {
 	state: {
-    showMenu: false,
+    showMenu: true,
     curView: 'sales',
   },
 	reducers: {

@@ -1,7 +1,9 @@
 import express from 'express';
 import path from 'path';
 // import morgan from 'morgan';
-import router from './router.mjs';
+// import router from './router.mjs';
+import router from './routes/sales.mjs';
+import dbConnect from './database';
 
 //#region META
 
@@ -16,16 +18,18 @@ const DIRNAME = typeof __dirname !== 'undefined'
 const localFolder = 'E:\\Work\\Projects\\test\\cra\\sales-size\\react-ui\\build';
 
 const worker = (cfg) => {
+  dbConnect(cfg);
+
   const app = express();
 
   // Priority serve any static files.
   const staticPath = cfg.DEBUG
     ? localFolder
-    : path.resolve(DIRNAME, cfg.REACT_UI_PATH);
+    : path.resolve(DIRNAME, cfg.UI_BUILD_PATH);
 
   const indexPath = cfg.DEBUG
     ? localFolder + '\\index.html'
-    : path.resolve(DIRNAME, cfg.REACT_UI_PATH, 'index.html');
+    : path.resolve(DIRNAME, cfg.UI_BUILD_PATH, 'index.html');
 
   app.use(express.static(staticPath));
 

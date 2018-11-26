@@ -4,5 +4,4 @@
  * @param {Function} fn - express handler (async function)
  */
 const wrap = fn => (...args) => fn(...args).catch(args[2]);
-const bar = '';
-export { wrap as default, bar };
+export { wrap as default };
